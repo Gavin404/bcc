@@ -14,6 +14,8 @@ mkdir $TMP/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
 
 llvmver=3.7.1
 
+git submodule update --init --recursive
+
 . scripts/git-tag.sh
 
 git archive HEAD --prefix=bcc/ --format=tar.gz -o $TMP/SOURCES/$git_tag_latest.tar.gz

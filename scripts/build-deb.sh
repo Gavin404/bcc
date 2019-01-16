@@ -16,6 +16,8 @@ function cleanup() {
 }
 trap cleanup EXIT
 
+git submodule update --init --recursive
+
 . scripts/git-tag.sh
 
 git archive HEAD --prefix=bcc/ --format=tar.gz -o $TMP/bcc_$revision.orig.tar.gz
